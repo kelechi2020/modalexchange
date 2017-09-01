@@ -1,8 +1,9 @@
 {% load crispy_forms_tags %}
 
 <div class="row">
-    <form class="form-horizontal" action="{% url 'test-form' %}" method="post">
-        {% crispy form %}
+    <form class="form-horizontal" action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_table }}
         <input type="submit" class="btn btn-submit col-md-offset-2">
     </form>
 </div>
